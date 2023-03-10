@@ -14,6 +14,20 @@ SELECT
 FROM
     STATION
 
+-- When I did this exercise, maybe HackerRank's MS SQL Server system crashed, the answer returned 184.16159999999 instead of 184.1616
 /*
-When I did this exercise, maybe HackerRank's MS SQL Server system crashed, the answer returned 184.16159999999 instead of 184.1616
+This issue has been resolved, the fault is mine. In this case, we have to use extra CAST function and set the data type to NUMERIC or similar to limit the number of numbers after the decimal point
 */
+-- Correct Solution
+SELECT
+    CAST(
+        ROUND(
+            SQRT(
+                SQUARE(MAX(LAT_N) - MIN(LAT_N))
+                +
+                SQUARE(MAX(LONG_W) - MIN(LONG_W))
+            )
+        ,4)
+     AS NUMERIC(12,2))
+FROM
+    STATION
