@@ -11,3 +11,31 @@ Note
 You can write two separate queries to get the desired output. It need not be a single query.
 */
 -- Solution
+
+-- USING TEMP TABLE AND UNION
+-- SHORTEST
+SELECT TOP 1
+    CITY,
+    LEN(CITY) AS CITY_LEN
+INTO
+    TEMP_TABLE_ASC
+FROM
+    STATION
+ORDER BY
+    LEN(CITY) ASC,
+    CITY ASC
+-- LONGEST
+SELECT TOP 1
+    CITY,
+    LEN(CITY) AS CITY_LEN
+INTO
+    TEMP_TABLE_DESC
+FROM
+    STATION
+ORDER BY
+    LEN(CITY) DESC,
+    CITY ASC
+-- UNION
+SELECT * FROM TEMP_TABLE_ASC
+UNION
+SELECT * FROM TEMP_TABLE_DESC    
