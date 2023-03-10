@@ -13,3 +13,7 @@ SELECT
     ,4)
 FROM
     STATION
+
+/*
+When I did this exercise, maybe HackerRank's MS SQL Server system crashed, the answer returned 184.16159999999 instead of 184.1616
+*/
