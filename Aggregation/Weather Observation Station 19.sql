@@ -28,6 +28,6 @@ SELECT
                 SQUARE(MAX(LONG_W) - MIN(LONG_W))
             )
         ,4)
-     AS NUMERIC(12,2))
+     AS NUMERIC(12,4))
 FROM
     STATION
