@@ -11,6 +11,6 @@ SELECT
 FROM
     STATION
 /*
-I learned from this exercise, when using ROUND() function in MS SQL Server, numbers are rounded but the numbers after the rounded number will not be lost (Example 100.3 would be 100,300000 ).
+I learned from this exercise, when using ROUND() function in MS SQL Server, numbers are rounded but the numbers after the rounded number are not lost (Example 100.3 will become 100.300000) .
 Therefore, we must use the CAST function and set the data type to limit the number of numbers after the decimal point
 */
